@@ -1,4 +1,16 @@
 /*! For license information please see main.js.LICENSE.txt */
+const formatDeviceName = (deviceName, metadata) => {
+	const rolesByNumber = {"0": "Starter", "1": "Scorekeeper", "2": "LaneTimer", "3": "Judge"};
+	const roleNumber = metadata.role;
+	if (!Boolean(roleNumber) && !rolesByNumber[String(roleNumber)]) {
+		return deviceName;
+	} else {
+		const devicePlusRole = deviceName + "\n" + rolesByNumber[roleNumber];
+		const formattedDeviceName = devicePlusRole + (metadata.isLivePublisher ? "\n" + "Publisher" : "")
+		return formattedDeviceName;
+	}
+};
+
 var Presence;
 (() => {
     var e = {
@@ -19209,7 +19221,7 @@ var Presence;
                                 let t = r(e.peerKey),
                                     i = t === l,
                                     o = i ? n.nodes.localPeer : n.nodes.remotePeer;
-                                return (e.color = o.color), (e.label = i ? "Me" : e.deviceName), (e.id = t), e;
+                                return (e.color = o.color), (e.label = i ? "Me" : formatDeviceName(e.deviceName, e.peerMetadata)), (e.id = t), e;
                             }),
                             c = h.map((e) => {
                                 let t = n.edges[e.connectionType.toLowerCase()];
