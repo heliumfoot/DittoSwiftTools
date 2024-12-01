@@ -19216,7 +19216,7 @@ var Presence;
                                 return (e.color = t.color), (e.font = n.edges.adaptive.font()), (e.from = r(e.peer1)), (e.to = r(e.peer2)), e;
                             });
                         if (d.find((e) => r(e.peerKey) === l).isConnectedToDittoCloud) {
-                            let e = { id: "DittoCloud", color: n.nodes.remotePeer.color, label: "Ditto Cloud" },
+                            let e = { id: "DittoCloud", color: n.nodes.remotePeer.color, label: "Swimmingly Cloud" },
                                 t = { color: n.edges.hydra.color, font: n.edges.adaptive.font(), from: l, to: "DittoCloud", id: `${r(i.localPeer.peerKey)}<->DittoCloud` };
                             u.push(e), c.push(t);
                         }
