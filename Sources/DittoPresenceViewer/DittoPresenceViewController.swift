@@ -37,7 +37,7 @@ final class DittoPresenceViewController: PlatformViewController {
     // MARK: Constants
 
     private struct LocalizedStrings {
-        static let title = NSLocalizedString("Ditto Presence",
+        static let title = NSLocalizedString("Device Connection Visual Map",
                                              bundle: Bundle.presenceViewerResourceBundle,
                                              comment: "View controller title for the presence UI")
     }
